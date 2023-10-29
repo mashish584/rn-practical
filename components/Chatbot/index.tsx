@@ -10,7 +10,7 @@ import {
 
 const aiTutorHash = 'ai-tutor';
 const checkHash = 'test-answer';
-const uri = `http://localhost:3000/student/native-app#${checkHash}`;
+const uri = `http://localhost:3000/student/native-app#${aiTutorHash}`;
 
 const base64 = `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAABECAYAAABNsu1UAAAMQGlDQ1BJQ0MgUHJvZmlsZQAASImVVwdYU8kWnluSkEBoAQSkhN4EkRpASggt9N5shCRAKDEGgoodXVRw7SICNnRVRMFKsyN2FsXeFwsqyrpYsCtvUkDXfeV7831z57//nPnPmXPn3rkDgNpxjkiUi6oDkCcsEMcG+9OTU1LppKeAAnQAGVgDBw43X8SMjg4HsAy1fy/vrgNE2l6xl2r9s/+/Fg0eP58LABINcTovn5sH8QEA8GquSFwAAFHKm00tEEkxrEBLDAOEeJEUZ8pxtRSny/EemU18LAvidgCUVDgccSYAqpcgTy/
                 kZkIN1X6IHYU8gRAANTrEPnl5k3kQp0FsDW1EEEv1Gek/6GT+TTN9WJPDyRzG8rnIilKAIF+Uy5n+f6bjf5e8XMmQD0tYVbLEIbHSOcO83cyZHCbFKhD3CdMjoyDWhPiDgCezhxilZElCEuT2qAE3nwVzBp80QB15nIAwiA0gDhLmRoYr+PQMQRAbYrhC0GmCAnY8xLoQL+LnB8YpbDaJJ8cqfKGNGWIWU8Gf5YhlfqW+7ktyEpgK/ddZfLZCH1MtyopPgpgCsXmhIDESYlWIHfJz4sIUNmOLsliRQzZiSaw0fnOIY/nCYH+5PlaYIQ6KVdiX5uUPzRfblCVgRyrwvoKs+BB5frB2LkcWP5wLdokvZCYM6fDzk8OH5sLjB
@@ -47,8 +47,8 @@ const ChatBot = () => {
     );
   };
 
-  const handleWebViewActions = (data: any) => {
-    switch (data?.action) {
+  const handleWebViewActions = (payload: any) => {
+    switch (payload?.action) {
       case WEBVIEW_ACTIONS.AI_TUTOR_HELP:
         console.log('Go to AI Tutor');
         break;
